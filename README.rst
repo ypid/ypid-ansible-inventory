@@ -37,6 +37,18 @@ Furthermore, the following prefixes are used:
 ``defaults``
   Default settings of ypid.
 
+Why not make them DebOps defaults?
+----------------------------------
+
+The main reason is that the settings in this repository come at a certain cost
+either in convenience and/or compatibility.
+DebOps has to make a trade-off between those costs and security. There is
+nothing wrong with that because the most secure system would be arguably some
+mostly offline, air gapped system only running trustworthy Free Software (not
+to forget handmade based on Free Hardware Designs). The generic use of such
+system might be limited.  See where ypid is going with this?  DebOps defaults are
+reasonable and secure defaults as far as ypid can tell.
+
 
 .. _Putty: http://www.putty.org/
 .. _Ansible: https://www.ansible.com/
