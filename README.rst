@@ -13,8 +13,8 @@ Disclamer
 ---------
 
 About the catch line at the top of this README. ypid is a `DebOps Developer`_
-and if there is anything which is considered weak in DebOps_ defaults then it
-will be fixed in DebOps_.
+and if there is anything which is considered weak or not state of the art in
+DebOps_ defaults then it will be fixed in DebOps_.
 
 File naming
 -----------
