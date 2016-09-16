@@ -1,0 +1,4 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+fuse_restrict_access: True

@@ -1,0 +1,43 @@
+ypid-ansible-inventory
+======================
+
+    When the default settings of DebOps_ are not paranoid enough.
+
+This git repository tracks the public Ansible inventory used by ypid.
+The inventory files are structured to allow interested fellows to symlink them
+into their own Ansible projects.
+
+ypid-ansible-inventory is part of ypid-ansible-common_.
+
+Disclamer
+---------
+
+About the catch line at the top of this README. ypid is a `DebOps Developer`_
+and if there is anything which is considered weak in DebOps_ defaults then it
+will be fixed in DebOps_.
+
+File naming
+-----------
+
+All files are prefixed with ``public_`` to prevent accidental disclosure
+of settings that ypid would like to keep private.
+
+Furthermore, the following prefixes are used:
+
+``paranoid``
+  Maximum security settings even at the risk of dropping support for not
+  up-to-date software or systems and reduced convenience.
+  For example Putty_ is not known to work with the paranoid ssh server
+  configuration.
+
+``defaults``
+  Default settings of ypid.
+
+
+.. _Putty: http://www.putty.org/
+
+.. Redundant definition inlined from: https://github.com/debops/docs/blob/master/docs/includes/80post.rst
+.. _DebOps: https://debops.org/
+.. _ypid-ansible-common: https://github.com/ypid/ypid-ansible-common/
+.. _DebOps Developer: https://docs.debops.org/en/latest/debops-keyring/docs/entities.html#debops-keyring-role-developers
+.. ]]]

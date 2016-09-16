@@ -1,0 +1,42 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# `molly-guard` is handled on Ansible host group level.
+sshd__optional_packages: []
+
+## Can only be set to 20.
+sshd__ferm_limit_hits: '20'
+
+sshd__ferm_limit_seconds: '{{ (60 * 1) }}'
+sshd__permit_root_login: 'no'
+sshd__paranoid: True
+sshd__allow_groups:
+  # - 'root'
+  - 'admins'
+  - 'sshusers'
+  - 'sftponly'
+
+sshd__custom_changeable_options: |
+  AllowTcpForwarding no
+
+sshd__custom_options: |
+  ServerKeyBits 4096
+  RSAAuthentication no
+  PermitUserEnvironment no
+  DebianBanner no
+
+  AllowAgentForwarding no
+
+  # Default:
+  GatewayPorts no
+
+  {{ sshd__custom_changeable_options }}
+
+sshd__ciphers_map:
+
+  '6.5': [ 'aes256-gcm@openssh.com' ]
+  '6.0': [ 'aes256-ctr' ]
+
+sshd__kex_algorithms_map:
+
+  '6.0': [ 'diffie-hellman-group-exchange-sha256' ]
