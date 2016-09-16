@@ -3,9 +3,13 @@ ypid-ansible-inventory
 
     When the default settings of DebOps_ are not paranoid enough.
 
-This git repository tracks the public Ansible inventory used by ypid.
+This git repository tracks the public Ansible_ inventory used by ypid.
 The inventory files are structured to allow interested fellows to symlink them
 into their own Ansible projects.
+This way, you can easily pull updates of this repository.
+
+Note that using those settings is intended for advanced Ansible_ and DebOps_
+users.
 
 ypid-ansible-inventory is part of ypid-ansible-common_.
 
@@ -35,6 +39,7 @@ Furthermore, the following prefixes are used:
 
 
 .. _Putty: http://www.putty.org/
+.. _Ansible: https://www.ansible.com/
 
 .. Redundant definition inlined from: https://github.com/debops/docs/blob/master/docs/includes/80post.rst
 .. _DebOps: https://debops.org/
