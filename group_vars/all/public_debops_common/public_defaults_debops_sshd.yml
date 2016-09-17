@@ -1,0 +1,11 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# `molly-guard` is handled on Ansible host group level.
+sshd__optional_packages: []
+
+
+## Can only be set to 20.
+sshd__ferm_limit_hits: '20'
+
+sshd__ferm_limit_seconds: '{{ (60 * 1) }}'
