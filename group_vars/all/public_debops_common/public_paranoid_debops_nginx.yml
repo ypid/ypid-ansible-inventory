@@ -1,0 +1,25 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# This will get you 100 % in 3/4 categories at: https://www.ssllabs.com/ssltest
+# and will exclude alot of clients which ypid considers deprecated ;-)
+
+# Consider added your domain to:
+# https://hstspreload.appspot.com
+nginx_hsts_age: '63072000'
+
+# Only support TLSv1.2.
+# Most notably, the following clients (and below versions) will not be able to
+# connect anymore:
+#
+# * IE 8-10 / Win 7
+# * Android 4.3
+# * OpenSSL 0.9.8y
+#
+# Those systems can’t be operated securely anyway and should be updated :)
+# Currently this is a bit too much :)
+# nginx_default_tls_protocols: [ 'TLSv1.2' ]
+
+# This would even exclude Android 5.0 and Android 6.0 which is a bit too much :)
+# This would be required if you want also 100 % at the Cipher Strength category.
+# nginx_default_ssl_ciphers: 'bettercrypto_org__set_a'
