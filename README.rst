@@ -30,7 +30,7 @@ Furthermore, the following prefixes are used:
 
 ``paranoid``
   Maximum security settings even at the risk of dropping support for not
-  up-to-date software or systems and reduced convenience.
+  up-to-date software/systems and reduced convenience.
   For example Putty_ is not known to work with the paranoid ssh server
   configuration.
 
