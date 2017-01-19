@@ -1,0 +1,41 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Common adjustments for using DebOps to manage workstations.
+
+# Don’t setup a realm for the host, it probably won’t need it.
+# It can still take part in the internal CA.
+pki_default_realms: []
+
+# We will probably not need DH params at all.
+# If needed, the custom DH params generated on the Ansible controller will
+# still be available.
+dhparam__generate_cron: False
+dhparam__generate_init: False
+
+# No need to run a fully featured NTP daemon on each workstation.
+# Just sync the time once when a interface comes up.
+ntp__daemon: 'ntpdate'
+
+# Always get the latest and gradest provided by a distribution release.
+unattended_upgrades__release: True
+
+# In case the workstation happens to be in the `debops_service_ifupdown`:
+# Do not configure network using ifupdown. This should be manage by the end
+# user using network-manager.
+ifupdown__ethernet_interfaces: {}
+ifupdown__default_interfaces: {}
+
+# Get the latest and greatest application versions but keep the base system on
+# rock solid Debian stable :)
+packages__apt_preferences__backports_state: 'present'
+
+
+# TODO list:
+#
+# * https://wiki.debianforum.de/Plymouth (solar looks so awesome)
+#	plymouth-set-default-theme -R solar
+#
+# * https://freedesktop.org/wiki/Software/systemd/Optimizations/
+#   * Testing: Remove rsyslog
+#   * Testing: Remove exim4
