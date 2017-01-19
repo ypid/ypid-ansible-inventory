@@ -1,7 +1,7 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-# Define `inventory__apt_default_mirrors` which for usage in your inventory.
+# Define `inventory__apt_default_mirrors` for usage in your inventory.
 inventory__apt_default_mirrors: '{{ ansible_local.apt.default_mirrors
                          if (ansible_local|d() and ansible_local.apt|d() and
                              ansible_local.apt.default_mirrors|d())

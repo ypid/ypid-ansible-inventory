@@ -1,0 +1,7 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Qubes OS creates the file `01qubes-proxy` in template VMs.
+# Use this filename instead of the DebOps default of `00apt_proxy` to overrule
+# the Qubes OS proxy.
+apt_proxy__filename: '05apt-proxy'

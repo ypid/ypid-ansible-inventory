@@ -1,0 +1,17 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Can be used when for a system most disks are expected to be absent.
+# The set: cryptsetup__mount_on_boot: [ 'noauto' ]
+cryptsetup__mount_on_boot: []
+
+cryptsetup__mount_options_ypid:
+  - 'noatime'
+  - 'nodiratime'
+  - 'nodev'
+  - 'nosuid'
+  - 'noexec'
+cryptsetup__mount_options: '{{ (cryptsetup__mount_options_ypid|list) + (cryptsetup__mount_on_boot|list) }}'
+
+cryptsetup__crypttab_options_ypid: []
+cryptsetup__crypttab_options: '{{ (cryptsetup__crypttab_options_ypid|list) + (cryptsetup__mount_on_boot|list) }}'
