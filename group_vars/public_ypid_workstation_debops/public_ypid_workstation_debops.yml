@@ -6,12 +6,14 @@
 # Don’t setup a realm for the host, it probably won’t need it.
 # It can still take part in the internal CA.
 pki_default_realms: []
+pki_scheduler: False
 
 # We will probably not need DH params at all.
 # If needed, the custom DH params generated on the Ansible controller will
 # still be available.
 dhparam__generate_cron: False
 dhparam__generate_init: False
+dhparam__deploy_state: 'absent'
 
 # No need to run a fully featured NTP daemon on each workstation.
 # Just sync the time once when a interface comes up.
@@ -29,6 +31,9 @@ ifupdown__default_interfaces: {}
 # Get the latest and greatest application versions but keep the base system on
 # rock solid Debian stable :)
 packages__apt_preferences__backports_state: 'present'
+
+# Even faster boot time.
+grub_timeout_hardware: 1
 
 
 # TODO list:
