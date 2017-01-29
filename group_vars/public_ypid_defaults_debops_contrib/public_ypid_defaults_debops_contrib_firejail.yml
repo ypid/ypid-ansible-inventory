@@ -1,0 +1,6 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+firejail__fix_for_users: '{{ users__accounts|d([]) }}'
+firejail__group_fix_for_users: '{{ users__group_accounts|d([]) }}'
+firejail__host_fix_for_users: '{{ users__host_accounts|d([]) }}'
