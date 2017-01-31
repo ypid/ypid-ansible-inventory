@@ -32,6 +32,10 @@ Furthermore, the following prefixes are used:
 ``defaults``
   Default settings of ypid.
 
+``facts``
+  Easy access to Ansible local facts set by Ansible roles including a fallback
+  if the fact is not available yet.
+
 ``paranoid``
   Maximum security settings even at the risk of dropping support for not
   up-to-date software/systems and reduced convenience.
