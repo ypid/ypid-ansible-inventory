@@ -1,0 +1,5 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+## I have not seen a Debian without python installed yet.
+bootstrap__raw: '{{ False if (ansible_distribution == "Debian") else True }}'
