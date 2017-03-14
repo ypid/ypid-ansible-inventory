@@ -9,8 +9,8 @@ sshd__allow_groups:
   - 'sshusers'
   - 'sftponly'
 
-sshd__custom_changeable_options: |
-  AllowTcpForwarding no
+sshd__allow_tcp_forwarding: 'no'
+sshd__use_dns: 'yes'
 
 sshd__custom_options: |
   ServerKeyBits 4096
@@ -20,10 +20,20 @@ sshd__custom_options: |
 
   AllowAgentForwarding no
 
+  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout|version_compare('7.4', '>=') %}
+  ## https://www.openssh.com/txt/release-7.4
+  DisableForwarding {{ sshd__allow_tcp_forwarding|d("yes") }}
+  {% endif %}
+
   # Default:
   GatewayPorts no
 
-  {{ sshd__custom_changeable_options }}
+  AllowTcpForwarding {{ sshd__allow_tcp_forwarding|d("yes") }}
+
+  UseDNS {{ sshd__use_dns|d("yes") }}
+
+
+sshd__host_keys: [ 'ed25519', 'rsa' ]
 
 sshd__ciphers_map:
 
@@ -32,4 +42,4 @@ sshd__ciphers_map:
 
 sshd__kex_algorithms_map:
 
-  '6.0': [ 'diffie-hellman-group-exchange-sha256' ]
+  '6.0': [ 'curve25519-sha256@libssh.org' ]

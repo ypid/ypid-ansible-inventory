@@ -9,3 +9,5 @@ sshd__optional_packages: []
 sshd__ferm_limit_hits: '20'
 
 sshd__ferm_limit_seconds: '{{ (60 * 1) }}'
+
+sshd__use_dns: 'no'

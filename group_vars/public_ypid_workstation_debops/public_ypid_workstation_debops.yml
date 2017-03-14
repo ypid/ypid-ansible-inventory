@@ -38,9 +38,6 @@ grub_timeout_hardware: 1
 
 # TODO list:
 #
-# * https://wiki.debianforum.de/Plymouth (solar looks so awesome)
-#	plymouth-set-default-theme -R solar
-#
 # * https://freedesktop.org/wiki/Software/systemd/Optimizations/
 #   * Testing: Remove rsyslog
 #   * Testing: Remove exim4
