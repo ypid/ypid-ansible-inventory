@@ -1,8 +1,9 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-ansible_facts__apt__default_mirrors: '{{
-  ansible_local.apt.default_mirrors
-  if (ansible_local|d() and ansible_local.apt|d() and
-    ansible_local.apt.default_mirrors|d())
-  else "http://httpredir.debian.org/debian" }}'
+ansible_facts__apt_default_mirror: '{{ ansible_local.apt.default_sources_map.Debian[0]
+                                       if (ansible_local|d() and ansible_local.apt|d() and
+                                           ansible_local.apt.default_sources_map|d() and
+                                           ansible_local.apt.default_sources_map.Debian|d() and
+                                           ansible_local.apt.default_sources_map.Debian[0]|d())
+                                       else "http://deb.debian.org/debian" }}'

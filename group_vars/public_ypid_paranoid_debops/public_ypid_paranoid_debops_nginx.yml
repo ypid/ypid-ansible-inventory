@@ -1,6 +1,8 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
+nginx__http_referrer_policy: 'no-referrer'
+
 # Consider adding your domain to:
 # https://hstspreload.appspot.com
 nginx_hsts_age: '63072000'

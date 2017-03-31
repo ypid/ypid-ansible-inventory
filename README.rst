@@ -42,6 +42,10 @@ Furthermore, the following prefixes are used:
   For example Putty_ is not known to work with the paranoid ssh server
   configuration.
 
+``staging``
+  Optimized for performance at the cost of security/hardening.
+  Use reduced key sizes.
+
 ``qubes``
   Optimized for use together with `Qubes OS`_ VMs.
 

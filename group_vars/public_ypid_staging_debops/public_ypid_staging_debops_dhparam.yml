@@ -1,0 +1,5 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+dhparam__generate_cron: False
+dhparam__bits: [ '2048' ]
