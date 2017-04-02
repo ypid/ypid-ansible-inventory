@@ -1,0 +1,7 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Refer to https://docs.debops.org/en/latest/ansible/roles/ansible-core/docs/guides.html#global-unsafe-writes.
+# Ideally only enable this for VMs where it is needed e. g. TemplateBasedVMs.
+# This is what ypid is doing so the setting is left at its default at this inventory level:
+# core__unsafe_writes: True
