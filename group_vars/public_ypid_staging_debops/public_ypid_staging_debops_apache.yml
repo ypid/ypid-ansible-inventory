@@ -1,0 +1,4 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+apache__ocsp_stapling_enabled: False
