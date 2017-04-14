@@ -1,0 +1,5 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Firewalls …
+core__keyserver: 'hkp://hkps.pool.sks-keyservers.net:80'

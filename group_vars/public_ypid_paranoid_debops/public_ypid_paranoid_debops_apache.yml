@@ -1,0 +1,5 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Ref: https://github.com/debops/ansible-nginx/issues/152
+apache__http_referrer_policy: 'no-referrer'
