@@ -1,0 +1,7 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Run backups before upgrades.
+unattended_upgrades__auto_reboot_time: '{{ "04:30"
+                                            if (ansible_virtualization_role in [ "host", "NA" ])
+                                            else "04:42" }}'

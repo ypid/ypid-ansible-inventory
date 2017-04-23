@@ -1,6 +1,0 @@
----
-# vim: foldmarker=[[[,]]]:foldmethod=marker
-
-# Already set to new default.
-# https://github.com/debops/ansible-nginx/issues/148
-nginx_hsts_preload: False

@@ -49,6 +49,16 @@ Furthermore, the following prefixes are used:
 ``qubes``
   Optimized for use together with `Qubes OS`_ VMs.
 
+
+The following suffixes are used:
+
+``debops``
+  Settings for DebOps Core roles.
+
+``debops_contrib``
+  Settings for DebOps Contrib roles.
+
+
 Why not make them DebOps defaults?
 ----------------------------------
 
