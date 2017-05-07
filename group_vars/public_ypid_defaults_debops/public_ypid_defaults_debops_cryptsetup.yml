@@ -15,3 +15,7 @@ cryptsetup__mount_options: '{{ (cryptsetup__mount_options_ypid|list) + (cryptset
 
 cryptsetup__crypttab_options_ypid: []
 cryptsetup__crypttab_options: '{{ (cryptsetup__crypttab_options_ypid|list) + (cryptsetup__mount_on_boot|list) }}'
+
+# I use UUIDs directly anyway so this might cause idempotency issues when disks
+# are present on the first run and absent on the second run.
+cryptsetup__use_uuid: False
