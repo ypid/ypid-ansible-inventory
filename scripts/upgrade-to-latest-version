@@ -5,4 +5,5 @@
 git ls-files -z "$(git rev-parse --show-toplevel)" | xargs --null -I '{}' find '{}' -type f -print0 \
  | xargs --null sed --in-place --regexp-extended '
      s/inventory__apt_default_mirrors/ansible_facts__apt__default_mirrors/g;
+     s/ansible_facts__apt__?default_mirrors(\[0\])?/ansible_facts__apt__default_mirror/g;
    '
