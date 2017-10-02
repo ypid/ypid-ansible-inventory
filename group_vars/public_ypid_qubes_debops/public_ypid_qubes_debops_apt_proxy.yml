@@ -5,3 +5,7 @@
 # Use this filename instead of the DebOps default of `00apt_proxy` to overrule
 # the Qubes OS proxy.
 apt_proxy__filename: '05apt-proxy'
+
+apt_proxy__proxy_auto_detect: '{{ "/usr/local.template/bin/get-reachable-apt-proxy"
+                                  if (apt_proxy__temporally_avoid_unreachable|bool)
+                                  else omit }}'
