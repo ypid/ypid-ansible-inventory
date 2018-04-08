@@ -46,6 +46,10 @@ Furthermore, the following prefixes are used:
   Optimized for performance at the cost of security/hardening.
   Use reduced key sizes.
 
+``experimental``
+  Enables experimental/tech preview features of roles.
+  Can be used when developing roles or to deploy test/staging instances.
+
 ``qubes``
   Optimized for use together with `Qubes OS`_ VMs.
 

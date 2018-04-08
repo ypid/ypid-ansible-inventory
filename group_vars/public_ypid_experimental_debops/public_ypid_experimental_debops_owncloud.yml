@@ -1,0 +1,13 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Deploy the latest Nextcloud version.
+owncloud__release: '13.0'
+
+# Experimental UTF8 4-byte support.
+# Copied from ~/.ansible/ypid-ansible-common/submodules/debops/docs/ansible/roles/debops.owncloud/getting-started.rst
+mariadb_server__options:
+  ## https://docs.nextcloud.com/server/13/admin_manual/installation/system_requirements.html#emoji-utf8-4-byte-support-with-mysql-mariadb
+  'innodb_large_prefix': 'on'
+  'innodb_file_format': 'barracuda'
+  'innodb_file_per_table': 'true'

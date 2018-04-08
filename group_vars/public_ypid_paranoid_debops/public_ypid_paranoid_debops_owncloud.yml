@@ -1,0 +1,7 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Disable unneeded apps.
+owncloud__group_occ_cmd_list:
+
+  - command: 'app:disable survey_client'
