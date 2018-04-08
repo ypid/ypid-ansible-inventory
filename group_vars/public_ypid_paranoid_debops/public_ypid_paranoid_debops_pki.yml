@@ -2,6 +2,6 @@
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
 # Enforce known good SHA1 commit hash.
-pki_acme_tiny_version: '5a7b4e79bc9bd5b51739c0d8aaf644f62cc440e6'
+pki_acme_tiny_version: 'ad7802f1c47e5c31a8e7dfedb3577e6c7d04844a'
 
 pki_realm_key_size: '4096'
