@@ -5,3 +5,5 @@
 # Ideally only enable this for VMs where it is needed e. g. TemplateBasedVMs.
 # This is what ypid is doing so the setting is left at its default at this inventory level:
 # core__unsafe_writes: True
+
+core__admin_users: 'user'
