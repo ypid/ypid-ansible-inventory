@@ -5,4 +5,4 @@
 ## By default /usr/local is a symlink to /rw/usrlocal/
 ## This change ensures that the role makes its changes to a path which is
 ## shared with all AppVMs so that improvements/fixes can be used by all AppVMs.
-firejail__system_local_bin_path: '/usr/local.template/bin'
+firejail__system_local_bin_path: '/usr/local.orig/bin'
