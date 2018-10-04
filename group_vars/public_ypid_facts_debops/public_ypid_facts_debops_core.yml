@@ -12,3 +12,20 @@ ansible_facts__core__fqdn: '{{
   if (ansible_local|d() and ansible_local.core|d() and
     ansible_local.core.fqdn|d())
   else ansible_fqdn }}'
+
+
+ansible_facts__root__bin: '{{
+  core__root_bin | d(
+    ansible_local.root.bin
+    if (ansible_local|d() and ansible_local.root|d() and
+      ansible_local.root.bin|d())
+    else "/usr/local/bin"
+  ) }}'
+
+ansible_facts__root__share: '{{
+  core__root_share | d(
+    ansible_local.root.share
+    if (ansible_local|d() and ansible_local.root|d() and
+      ansible_local.root.share|d())
+    else "/usr/local/share"
+  ) }}'

@@ -8,6 +8,10 @@
 pki_default_realms: []
 pki_scheduler: False
 
+# Systems might have public IP addresses (v6) but that does not mean that you
+# want to run ACME on them.
+pki_acme: False
+
 # We will probably not need DH params at all.
 # If needed, the custom DH params generated on the Ansible controller will
 # still be available.

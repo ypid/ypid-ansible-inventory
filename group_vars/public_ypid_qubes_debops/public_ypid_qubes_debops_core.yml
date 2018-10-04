@@ -1,9 +1,21 @@
 ---
 # vim: foldmarker=[[[,]]]:foldmethod=marker
 
-# Refer to https://docs.debops.org/en/latest/ansible/roles/ansible-core/docs/guides.html#global-unsafe-writes.
-# Ideally only enable this for VMs where it is needed e. g. TemplateBasedVMs.
-# This is what ypid is doing so the setting is left at its default at this inventory level:
+## Refer to https://docs.debops.org/en/latest/ansible/roles/ansible-core/docs/guides.html#global-unsafe-writes.
+## Ideally only enable this for VMs where it is needed e. g. TemplateBasedVMs.
+## This is what ypid is doing so the setting is left at its default at this inventory level:
 # core__unsafe_writes: True
 
 core__admin_users: 'user'
+
+## It is expected that this is run against a TemplateVM.
+## By default /usr/local is a symlink to /rw/usrlocal/
+## This change ensures that the role makes its changes to a path which is
+## shared with all AppVMs so that improvements/fixes can be used by all AppVMs.
+
+core__root_bin: '/usr/local.orig/bin'
+core__root_etc: '/usr/local.orig/etc'
+core__root_lib: '/usr/local.orig/lib'
+core__root_sbin: '/usr/local.orig/sbin'
+core__root_src: '/usr/local.orig/src'
+core__root_share: '/usr/local.orig/share'
