@@ -1,4 +1,4 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-grub_timeout_hardware: 2
+grub__timeout_hardware: 2

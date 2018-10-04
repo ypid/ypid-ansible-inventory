@@ -40,7 +40,7 @@ ifupdown__default_interfaces: {}
 packages__apt_preferences__backports_state: 'present'
 
 # Even faster boot time.
-grub_timeout_hardware: 1
+grub__timeout_hardware: 1
 
 
 # TODO list:
