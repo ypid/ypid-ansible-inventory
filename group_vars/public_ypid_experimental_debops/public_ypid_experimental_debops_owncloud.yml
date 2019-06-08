@@ -2,7 +2,7 @@
 # vim: foldmarker=[[[,]]]:foldmethod=marker
 
 # Deploy the latest Nextcloud version.
-owncloud__release: '13.0'
+owncloud__release: '15.0'
 
 # Experimental UTF8 4-byte support.
 # Copied from ~/.ansible/ypid-ansible-common/submodules/debops/docs/ansible/roles/debops.owncloud/getting-started.rst

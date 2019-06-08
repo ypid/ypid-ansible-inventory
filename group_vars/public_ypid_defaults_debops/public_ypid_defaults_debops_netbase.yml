@@ -1,0 +1,6 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# I don’t like duplicating the IP address of the host if I don’t have to.
+# Lets just use the loopback address.
+netbase__host_ipv4_address: '127.0.1.1'

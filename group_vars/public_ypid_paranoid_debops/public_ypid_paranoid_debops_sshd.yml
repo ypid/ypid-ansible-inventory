@@ -32,8 +32,6 @@ sshd__custom_options: |
 
   AllowTcpForwarding {{ sshd__allow_tcp_forwarding|d("yes") }}
 
-  UseDNS {{ sshd__use_dns|d("yes") }}
-
 
 sshd__host_keys: [ 'ed25519', 'rsa' ]
 
