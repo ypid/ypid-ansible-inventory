@@ -24,7 +24,7 @@ sshd__custom_options: |
 
   {% if sshd__register_version.stdout|d() and sshd__register_version.stdout|version_compare('7.4', '>=') %}
   ## https://www.openssh.com/txt/release-7.4
-  DisableForwarding {{ sshd__allow_tcp_forwarding|d("yes") }}
+  DisableForwarding {{ "yes" if (sshd__allow_tcp_forwarding|d("yes") == "no") else "no" }}
   {% endif %}
 
   # Default:
