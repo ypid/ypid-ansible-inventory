@@ -5,9 +5,9 @@
 sshd__optional_packages: []
 
 
-## Can only be set to 20.
-sshd__ferm_limit_hits: '20'
+## Upper limit 255.
+sshd__ferm_limit_hits: '255'
 
-sshd__ferm_limit_seconds: '{{ (60 * 1) }}'
+sshd__ferm_limit_seconds: '{{ (60 * 2) }}'
 
 sshd__use_dns: 'no'
