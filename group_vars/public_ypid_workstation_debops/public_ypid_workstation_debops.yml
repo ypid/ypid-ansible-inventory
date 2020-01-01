@@ -29,7 +29,7 @@ unattended_upgrades__release: True
 # Silently ignore unreachable APT proxies.
 apt_proxy__temporally_avoid_unreachable: True
 
-# In case the workstation happens to be in the `debops_service_ifupdown`:
+# In case the workstation happens to be in `debops_service_ifupdown`:
 # Do not configure network using ifupdown. This should be manage by the end
 # user using network-manager.
 ifupdown__ethernet_interfaces: {}

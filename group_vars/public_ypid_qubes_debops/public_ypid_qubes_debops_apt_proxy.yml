@@ -5,5 +5,5 @@
 # In AppVMs, the file is deleted by Qubes OS, in such cases, the default of `00apt_proxy` will become active.
 
 apt_proxy__proxy_auto_detect: '{{ "/usr/local.orig/lib/get-reachable-apt-proxy"
-                                  if (apt_proxy__temporally_avoid_unreachable|bool)
+                                  if (apt_proxy__temporally_avoid_unreachable|d(False)|bool)
                                   else omit }}'
