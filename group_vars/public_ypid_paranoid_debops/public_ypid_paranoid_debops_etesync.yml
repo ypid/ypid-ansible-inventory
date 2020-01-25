@@ -1,0 +1,4 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+etesync__http_psk_subpath_enabled: True

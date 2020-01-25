@@ -1,0 +1,4 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+docker_server__install_virtualenv: False
