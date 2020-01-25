@@ -1,5 +1,7 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-ntp__daemon: 'ntpd'
+# https://www.coreinfrastructure.org/blogs/securing-network-time/
+ntp__daemon: 'chrony'
+
 ntp__timezone: 'Europe/Berlin'
