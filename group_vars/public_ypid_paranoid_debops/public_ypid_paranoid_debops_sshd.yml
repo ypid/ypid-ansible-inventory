@@ -13,7 +13,7 @@ sshd__allow_tcp_forwarding: 'no'
 sshd__use_dns: 'yes'
 
 sshd__custom_options: |
-  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout|version_compare('7.4', '<') %}
+  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout is version_compare('7.4', '<') %}
   ServerKeyBits 4096
   RSAAuthentication no
   {% endif %}
@@ -22,7 +22,7 @@ sshd__custom_options: |
 
   AllowAgentForwarding no
 
-  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout|version_compare('7.4', '>=') %}
+  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout is version_compare('7.4', '>=') %}
   ## https://www.openssh.com/txt/release-7.4
   DisableForwarding {{ "yes" if (sshd__allow_tcp_forwarding|d("yes") == "no") else "no" }}
   {% endif %}
