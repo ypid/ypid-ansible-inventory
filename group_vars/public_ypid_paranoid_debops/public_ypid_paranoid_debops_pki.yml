@@ -2,9 +2,10 @@
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
 # Enforce known good SHA1 commit hash.
-pki_acme_tiny_version: '5350420d35177eda733d85096433a24e55f8d00e'
+pki_acme_tiny_version: '0a9afb2b72bafad29d172f9d3d704ef979530fe3'
 
 pki_realm_key_size: '4096'
 
-# I see trusting an additional root certificate as increased risk so I want to do this manually when required for individual hosts.
+# I see trusting an additional root certificate as increased risk so I want to
+# do this manually when required for individual hosts.
 pki_system_ca_certificates_download_all_hosts: False

@@ -3,9 +3,7 @@
 
 nginx__http_referrer_policy: 'no-referrer'
 
-# Consider adding your domain to:
-# https://hstspreload.appspot.com
-nginx_hsts_age: '63072000'
+nginx_default_ssl_curve: False
 
 nginx_default_tls_protocols: [ 'TLSv1.2' ]
 

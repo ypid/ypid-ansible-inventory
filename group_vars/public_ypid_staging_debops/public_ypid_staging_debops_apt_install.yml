@@ -1,0 +1,12 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+apt_install__conditional_whitelist_packages:
+  - 'irqbalance'
+  - 'uptimed'
+  - 'libpam-systemd'
+  - 'haveged'
+  - 'gnupg-curl'
+  # - 'needrestart'
+  # - 'ranger'
+  - 'open-vm-tools'
