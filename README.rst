@@ -83,5 +83,5 @@ are reasonable and secure defaults as far as ypid can tell.
 .. _DebOps: https://debops.org/
 .. _Qubes OS: https://www.qubes-os.org/
 .. _ypid-ansible-common: https://github.com/ypid/ypid-ansible-common/
-.. _DebOps Developer: https://docs.debops.org/en/latest/debops-keyring/docs/entities.html#debops-keyring-role-developers
+.. _DebOps Developer: https://github.com/debops/debops/blob/master/CREDITS
 .. ]]]
