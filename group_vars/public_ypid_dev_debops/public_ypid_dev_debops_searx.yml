@@ -1,0 +1,9 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Copyright (C) 2021 Robin Schneider <ypid@riseup.net>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+searx__fqdn: '{{ inventory_hostname }}'
+searx__http_psk_subpath_enabled: True

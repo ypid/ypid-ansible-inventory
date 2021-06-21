@@ -42,6 +42,14 @@ Furthermore, the following prefixes are used:
   For example Putty_ is not known to work with the paranoid ssh server
   configuration.
 
+``dev``
+  Configure roles so that they are easy to deploy to a single VM/container for
+  developing and testing.
+  This will:
+
+    * Configure the FQDN of the service to the hostname so that DNS and certificates work by default.
+    * Turn optional features on for testing.
+
 ``staging``
   Optimized for performance at the cost of security/hardening.
   Use reduced key sizes.

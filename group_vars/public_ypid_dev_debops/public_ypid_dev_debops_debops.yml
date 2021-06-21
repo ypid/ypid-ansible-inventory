@@ -1,0 +1,8 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Copyright (C) 2021 Robin Schneider <ypid@riseup.net>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+debops__no_log: False

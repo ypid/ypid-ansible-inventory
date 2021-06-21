@@ -1,0 +1,8 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Define here also to be able to use it in file content statement.
+ansible_managed: 'This file is managed by Ansible, all changes will be lost.'
+
+# Workaround for issue with apt_repository module and to support FreeBSD.
+ansible_python_interpreter: '/usr/bin/env python3'
