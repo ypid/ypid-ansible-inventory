@@ -12,7 +12,6 @@ sshd__allow_groups:
   - 'sftponly'
 
 sshd__allow_tcp_forwarding: 'no'
-sshd__use_dns: 'yes'
 
 # To activate this, you need to define `sshd__custom_options` based on this:
 sshd__custom_options_paranoid: |
