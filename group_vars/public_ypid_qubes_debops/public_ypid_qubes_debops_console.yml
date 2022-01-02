@@ -1,6 +1,0 @@
----
-# vim: foldmarker=[[[,]]]:foldmethod=marker
-
-console_root: False
-
-console_proc_hidepid: False

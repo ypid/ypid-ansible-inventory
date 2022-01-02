@@ -3,5 +3,9 @@
 
 etesync__http_psk_subpath_enabled: True
 
+# The group_names check is there to prevent this password to get
+# created/rendered if you run `ansible-inventory` for another host.
 etesync__config_secret_key: '{{ lookup("password", secret + "/etesync/" +
-                                inventory_hostname + "/config/secret_key length=64") }}'
+                                 inventory_hostname + "/config/secret_key length=64")
+                                if ("debops_service_etesync" in group_names)
+                                else "" }}'

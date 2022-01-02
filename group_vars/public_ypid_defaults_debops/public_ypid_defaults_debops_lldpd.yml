@@ -1,0 +1,4 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+lldpd__enabled: False

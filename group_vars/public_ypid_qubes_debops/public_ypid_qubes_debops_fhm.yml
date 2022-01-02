@@ -1,0 +1,23 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# It is expected that this is run against a TemplateVM.
+# By default /usr/local is a symlink to /rw/usrlocal/
+# This change ensures that the role makes its changes to a path which is
+# shared with all AppVMs so that improvements/fixes can be used by all AppVMs.
+# The custom /usr/local.template is used to achieve this because /usr/local.orig is copied to /usr/local/ on first boot of a TemplateBasedVM.
+# Ref: https://github.com/QubesOS/qubes-core-agent-linux/blob/c9ec75292393bdeb564d6ec6124228ecbad42fbe/init/setup-rw.sh
+
+fhs__directories:
+  - name: 'bin'
+    path: '/usr/local.template/bin'
+  - name: 'etc'
+    path: '/usr/local.template/etc'
+  - name: 'lib'
+    path: '/usr/local.template/lib'
+  - name: 'sbin'
+    path: '/usr/local.template/sbin'
+  - name: 'share'
+    path: '/usr/local.template/share'
+  - name: 'src'
+    path: '/usr/local.template/src'
