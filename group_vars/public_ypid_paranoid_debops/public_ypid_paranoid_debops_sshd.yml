@@ -3,10 +3,10 @@
 
 sshd__ferm_interface: '{{ [ ansible_default_ipv4.interface ] }}'
 
-sshd__permit_root_login: 'no'
+sshd__password_authentication: 'no'
 sshd__paranoid: True
 sshd__allow_groups:
-  # - 'root'
+  - 'root'
   - 'admins'
   - 'sshusers'
   - 'sftponly'
