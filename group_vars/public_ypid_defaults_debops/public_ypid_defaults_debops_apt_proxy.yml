@@ -1,0 +1,18 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+inventory__apt_proxy__http_local_urls: '{{ ["http://localhost:3142/"]
+                                if ("service_cache" in group_names)
+                                else [] }}'
+
+apt_proxy__http_url: '{{ ((inventory__apt_proxy__http_local_urls + apt_proxy__http_urls|d([])) | join(" "))
+                         if (apt_proxy__temporally_avoid_unreachable|d(False)|bool)
+                         else (inventory__apt_proxy__http_local_urls + apt_proxy__http_urls|d([])) | first }}'
+
+apt_proxy__https_url: 'DIRECT'
+
+apt_proxy__http_direct:
+  - 'bugs.debian.org'
+
+  ## TODO: firmware-b43legacy-installer does not respect this setting and will *fail*!!! Leaving the machine without WLAN.
+  # - 'downloads.openwrt.or'
