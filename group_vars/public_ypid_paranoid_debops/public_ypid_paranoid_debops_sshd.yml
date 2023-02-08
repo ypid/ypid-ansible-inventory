@@ -3,45 +3,44 @@
 
 sshd__ferm_interface: '{{ [ ansible_default_ipv4.interface ] }}'
 
-sshd__password_authentication: 'no'
+sshd__public_ypid_paranoid_configuration:
+
+  - name: 'X11Forwarding'
+    value: False
+
+  - name: 'PasswordAuthentication'
+    value: False
+
+  - name: 'PermitRootLogin'
+    value: False
+
+  - name: 'AllowGroups'
+    copy_id_from: 'PermitRootLogin'
+    value: '{{ ansible_local.system_groups.access.sshd
+               | d(["admins", "sshusers", "sftponly"]) }}'
+
+  - name: 'DebianBanner'
+    copy_id_from: 'Banner'
+    value: False
+
+  - name: 'AllowAgentForwarding'
+    value: False
+
+  - name: 'AllowTcpForwarding'
+    value: False
+
+  - name: 'DisableForwarding '
+    value: True
+    copy_id_from: 'AllowTcpForwarding'
+
 sshd__paranoid: True
-sshd__allow_groups:
-  - 'root'
-  - 'admins'
-  - 'sshusers'
-  - 'sftponly'
-
-sshd__allow_tcp_forwarding: 'no'
-
-# To activate this, you need to define `sshd__custom_options` based on this:
-sshd__custom_options_paranoid: |
-  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout is version_compare('7.4', '<') %}
-  ServerKeyBits 4096
-  RSAAuthentication no
-  {% endif %}
-  PermitUserEnvironment no
-  DebianBanner no
-
-  AllowAgentForwarding no
-
-  {% if sshd__register_version.stdout|d() and sshd__register_version.stdout is version_compare('7.4', '>=') %}
-  ## https://www.openssh.com/txt/release-7.4
-  DisableForwarding {{ "yes" if (sshd__allow_tcp_forwarding|d("yes") == "no") else "no" }}
-  {% endif %}
-
-  # Default:
-  GatewayPorts no
-
-  AllowTcpForwarding {{ sshd__allow_tcp_forwarding|d("yes") }}
-
 
 sshd__host_keys: [ 'ed25519', 'rsa' ]
 
 sshd__ciphers_map:
 
   '6.5': [ 'aes256-gcm@openssh.com' ]
-  '6.0': [ 'aes256-ctr' ]
 
 sshd__kex_algorithms_map:
 
-  '6.0': [ 'curve25519-sha256@libssh.org' ]
+  '6.5': [ 'diffie-hellman-group-exchange-sha256' ]

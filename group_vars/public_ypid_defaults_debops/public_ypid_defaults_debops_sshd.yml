@@ -10,4 +10,17 @@ sshd__ferm_limit_hits: '255'
 
 sshd__ferm_limit_seconds: '{{ (60 * 2) }}'
 
-sshd__use_dns: 'no'
+# Support additional layers.
+sshd__combined_configuration: '{{ sshd__original_configuration
+                                  + sshd__default_configuration
+                                  + sshd__public_ypid_defaults_configuration
+                                  + sshd__public_ypid_paranoid_configuration
+                                  + sshd__managed_configuration
+                                  + sshd__configuration
+                                  + sshd__group_configuration
+                                  + sshd__host_configuration }}'
+
+sshd__public_ypid_defaults_configuration:
+
+  - name: 'UseDNS'
+    value: False
