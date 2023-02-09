@@ -29,7 +29,7 @@ sshd__public_ypid_paranoid_configuration:
   - name: 'AllowTcpForwarding'
     value: False
 
-  - name: 'DisableForwarding '
+  - name: 'DisableForwarding'
     value: True
     copy_id_from: 'AllowTcpForwarding'
 
