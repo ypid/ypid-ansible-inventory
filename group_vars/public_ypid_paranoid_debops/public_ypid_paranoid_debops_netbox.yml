@@ -1,0 +1,4 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+netbox__config_census_reporting: False
