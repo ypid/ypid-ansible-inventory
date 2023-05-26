@@ -1,0 +1,10 @@
+---
+# vim: foldmarker=[[[,]]]:foldmethod=marker
+
+apt_install__editor_packages:
+  - 'neovim'
+
+apt_install__default_alternatives:
+
+  - name: 'editor'
+    path: '/usr/bin/nvim'
