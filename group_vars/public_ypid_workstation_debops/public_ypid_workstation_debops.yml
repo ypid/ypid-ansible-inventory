@@ -42,6 +42,10 @@ packages__apt_preferences__backports_state: 'present'
 # Even faster boot time.
 grub__timeout_hardware: 1
 
+# Reset hidepid from 2 (DebOps default) to 0 (Linux and Debian default) for
+# Polkit to work.
+# Ref: https://github.com/debops/debops/pull/2509
+proc_hidepid__level: '0'
 
 # TODO list:
 #
